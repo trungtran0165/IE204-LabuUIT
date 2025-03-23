@@ -51,3 +51,4 @@ coverage/
 # Git-related
 .git/
 .git-credentials
+.cursor
