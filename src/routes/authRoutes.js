@@ -9,4 +9,4 @@ router.post('/login', authController.login);
 router.post('/logout', authController.logout);
 router.get('/profile', verifyToken, authController.getProfile);
 
-module.exports = router;
+module.exports = router; 

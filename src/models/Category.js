@@ -21,7 +21,7 @@ const categorySchema = new mongoose.Schema({
 });
 
 // Pre-save hook để tạo slug từ name
-categorySchema.pre('save', function(next) {
+categorySchema.pre('save', function (next) {
     if (this.isModified('name')) {
         this.slug = this.name
             .toLowerCase()
@@ -31,6 +31,9 @@ categorySchema.pre('save', function(next) {
     }
     next();
 });
+
+// Add text index for search functionality
+categorySchema.index({ name: 'text', description: 'text' });
 
 const Category = mongoose.model('Category', categorySchema);
 

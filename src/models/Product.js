@@ -42,7 +42,7 @@ const productSchema = new mongoose.Schema({
 });
 
 // Pre-save hook để tạo slug từ name
-productSchema.pre('save', function(next) {
+productSchema.pre('save', function (next) {
     if (this.isModified('name')) {
         this.slug = this.name
             .toLowerCase()
@@ -52,6 +52,9 @@ productSchema.pre('save', function(next) {
     }
     next();
 });
+
+// Add text index for search functionality
+productSchema.index({ name: 'text', description: 'text', shortDescription: 'text' });
 
 const Product = mongoose.model('Product', productSchema);
 

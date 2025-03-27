@@ -1,9 +1,11 @@
 const express = require('express');
 // const userRoute = require('./user');
-const authRoute = require('./auth');
-const blogRoute = require('./blog');
+const authRoute = require('./authRoutes');
+const blogRoute = require('./blogRoutes');
 const productRoute = require('./productRoutes');
 const categoryRoute = require('./categoryRoutes');
+const cartRoute = require('./cartRoutes');
+const searchRoute = require('./searchRoutes');
 
 function route(app) {
     // API route
@@ -15,6 +17,8 @@ function route(app) {
     app.use('/api/blogs', blogRoute);
     app.use('/api/products', productRoute);
     app.use('/api/categories', categoryRoute);
+    app.use('/api/cart', cartRoute);
+    app.use('/api/search', searchRoute);
 }
 
 module.exports = route;
