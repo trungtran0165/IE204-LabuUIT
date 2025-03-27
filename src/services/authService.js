@@ -34,7 +34,8 @@ class AuthService extends BaseService {
                 user: {
                     id: user._id,
                     name: user.name,
-                    email: user.email
+                    email: user.email,
+                    role: user.role
                 }
             };
         } catch (error) {
@@ -69,7 +70,8 @@ class AuthService extends BaseService {
                 user: {
                     id: user._id,
                     name: user.name,
-                    email: user.email
+                    email: user.email,
+                    role: user.role
                 }
             };
         } catch (error) {
